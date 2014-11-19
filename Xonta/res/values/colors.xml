@@ -1,0 +1,15 @@
+<resources>
+
+    <color name="zerlina_gold">#dbcc9b</color>
+    <color name="zerlina_blue">#1d7bcd</color>
+    <color name="titlebackgroundcolor">#FE0077</color>
+    <color name="titletextcolor">#ff000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="light_blue">#99CCFF</color>
+    <color name="pink">#FF0066</color>
+    <color name="light_pink">#FFCCFF</color>
+
+    <drawable name="screen_background_light">#ffffffff</drawable>
+</resources>

@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.evenos.zerlinamobile.ZerlinaActivity" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/action_change_password"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_change_password"/>
+    <item
+        android:id="@+id/action_lockui"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_lockui"/>
+
+</menu>
