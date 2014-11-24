@@ -24,6 +24,8 @@ import org.evenos.zerlina.utils.ZerlinaApplication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.media.audiofx.BassBoost.Settings;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -35,7 +37,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.itkamer.xonta.R;
-
+import android.provider.Settings.Secure;
 /**
  * Activity for setting or entering the user password based on if a password exists or not
  * 
@@ -90,6 +92,7 @@ public class PasswordActivity extends ZerlinaActivity {
 
 	private OnKeyListener enterPasswordKeyListener;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -107,8 +110,14 @@ public class PasswordActivity extends ZerlinaActivity {
 	}
     
 	public void insertEncryptedPassword() {
+		//Check if date is set to automatic
 		int autocheck =android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.AUTO_TIME, 0);
 		
+		deleteDatabase("Zerlina.db");
+		String buildnum = Secure.getString(getBaseContext().getContentResolver(),
+                Secure.ANDROID_ID);
+		
+	    
 		switch (autocheck) {
 			
 			case 1:		
@@ -116,24 +125,25 @@ public class PasswordActivity extends ZerlinaActivity {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
 			String Date = sdf.format(c.getTime());
 			Password passwd = new Password();
-			switch (Date) {
+			
+			switch (Date) { //insert password depending on date
 			case "16-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass1());
+				setPasswordAndLogIn(passwd.getPass1()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "17-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass2());
+				setPasswordAndLogIn(passwd.getPass2()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "18-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass3());
+				setPasswordAndLogIn(passwd.getPass3()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "19-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass4());
+				setPasswordAndLogIn(passwd.getPass4()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
@@ -143,133 +153,133 @@ public class PasswordActivity extends ZerlinaActivity {
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "21-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass6());
+				setPasswordAndLogIn(passwd.getPass6()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "22-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass7());
+				setPasswordAndLogIn(passwd.getPass7()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "25-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass8());
+				setPasswordAndLogIn(passwd.getPass8()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "26-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass9());
+				setPasswordAndLogIn(passwd.getPass9()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "27-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass10());
+				setPasswordAndLogIn(passwd.getPass10()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "28-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass11());
+				setPasswordAndLogIn(passwd.getPass11()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "29-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass12());
+				setPasswordAndLogIn(passwd.getPass12()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "30-Nov-2014":
-				setPasswordAndLogIn(passwd.getPass13());
+				setPasswordAndLogIn(passwd.getPass13()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "01-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass14());
+				setPasswordAndLogIn(passwd.getPass14()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "02-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass15());
+				setPasswordAndLogIn(passwd.getPass15()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "03-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass16());
+				setPasswordAndLogIn(passwd.getPass16()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "04-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass17());
+				setPasswordAndLogIn(passwd.getPass17()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "05-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass18());
+				setPasswordAndLogIn(passwd.getPass18()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "06-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass19());
+				setPasswordAndLogIn(passwd.getPass19()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 
 			case "07-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass20());
+				setPasswordAndLogIn(passwd.getPass20()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "08-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass21());
+				setPasswordAndLogIn(passwd.getPass21()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "09-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass22());
+				setPasswordAndLogIn(passwd.getPass22()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "10-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass23());
+				setPasswordAndLogIn(passwd.getPass23()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "11-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass24());
+				setPasswordAndLogIn(passwd.getPass24()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "12-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass25());
+				setPasswordAndLogIn(passwd.getPass25()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "13-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass26());
+				setPasswordAndLogIn(passwd.getPass26()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "14-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass27());
+				setPasswordAndLogIn(passwd.getPass27()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "15-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass28());
+				setPasswordAndLogIn(passwd.getPass28()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "16-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass29());
+				setPasswordAndLogIn(passwd.getPass29()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "17-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass30());
+				setPasswordAndLogIn(passwd.getPass30()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
 			case "18-Dec-2014":
-				setPasswordAndLogIn(passwd.getPass31());
+				setPasswordAndLogIn(passwd.getPass31()+buildnum);
 				Toast.makeText(getApplicationContext(), "^_^ Xonta ",
 						Toast.LENGTH_SHORT).show();
 				break;
@@ -532,7 +542,7 @@ public class PasswordActivity extends ZerlinaActivity {
 	@Background
 	public void setPasswordAndLogIn(String string) {
 		// Make sure the data-db is really deleted
-		deleteDatabase("Zerlina.db");
+		
 
 		// Open the password db
 		PasswordSQLiteHelper helper = new PasswordSQLiteHelper(getApplicationContext());
@@ -542,7 +552,7 @@ public class PasswordActivity extends ZerlinaActivity {
 		String[] encrypted;
 		try {
 			// Encrypt the key and store it in the password db
-			encrypted = PasswordUtils.encrypt(key, string);
+			encrypted = PasswordUtils.encrypt(key, string );
 			MPassword password = new MPassword(1, encrypted[0], 0, encrypted[1], encrypted[2]);
 			helper.setPassword(password);
 

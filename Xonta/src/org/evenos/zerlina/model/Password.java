@@ -8,7 +8,7 @@ public class Password {
 	private String pass2 ="2nd";
 	private String pass3="3rd";
 	private String pass4="42";
-	private String pass5="k42gGC%ddd";
+	private String pass5="kk";
 	private String pass6="@lone4572";
 	private String pass7="kiGnth784";
 	private String pass8="Pas5sinth";

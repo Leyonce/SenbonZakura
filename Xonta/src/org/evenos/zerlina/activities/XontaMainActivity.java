@@ -359,7 +359,7 @@ public class XontaMainActivity extends ZerlinaActivity {
                             progressBar.dismiss();
                             
                             //so we now start the About us activity with the use of an intent
-                         startAboutUSActivity();
+                        // startAboutUSActivity();
                         }
                     }
 
